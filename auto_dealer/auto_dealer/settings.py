@@ -68,6 +68,20 @@ ITEM_PIPELINES = {
    'auto_dealer.pipelines.AutoDealerPipeline': 300,
 }
 
+
+SCHEDULER="scrapy_redis.scheduler.Scheduler"
+DUPEFILTER_CLASS="scrapy_redis.dupefilter.RFPDupeFilter"
+SCHEDULER_QUEUE_CLASS='scrapy_redis.queue.SpiderQueue'
+REDIS_URL = 'redis://192.168.111.128:6379'
+# REDIS_URL = 'redis://39.106.155.194:6379'
+
+
+SCHEDULER_PERSIST=True
+
+REDIS_HOST = "192.168.111.128"
+
+
+REDIS_POST = 6379
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
